@@ -1,0 +1,5 @@
+language: mk
+intents:
+  HassGetState:
+    data:
+      - sentences: []

@@ -1,0 +1,73 @@
+language: mk
+responses:
+  errors:
+    no_intent: "Жалам, но не ве разбрав"
+    no_area: "Не постои просторија со име {{ area }}"
+    no_domain: "Просторијата {{ area }} не содржи {{ domain }}"
+    no_device_class: "Просторијата {{ area }} не содржи {{ device_class }}"
+    no_entity: "Не постои уред или ентитет со име {{ entity }}"
+    handle_error: "Се појави неочекувана грешка при реализирање на барањето"
+lists:
+  color:
+    values:
+      - in: "бел(а|о)"
+        out: "white"
+      - in: "црн(а|о)"
+        out: "black"
+      - in: "црвен(а|о)"
+        out: "red"
+      - in: "портокалов(а|о)"
+        out: "orange"
+      - in: "жолт(а|о)"
+        out: "yellow"
+      - in: "зелен(а|о)"
+        out: "green"
+      - in: "син(а|о)"
+        out: "blue"
+      - in: "виолетов(а|о)"
+        out: "purple"
+      - in: "кафеав(а|о) | кафен(а|о)"
+        out: "brown"
+      - in: "розев(а|о)"
+        out: "pink"
+  brightness:
+    range:
+      type: "percentage"
+      from: 0
+      to: 100
+  temperature:
+    range:
+      type: "temperature"
+      from: 0
+      to: 100
+  temperature_unit:
+    values:
+      - in: "Ц | [степен(а|и)] (Целзиус[а|и|ови] | во Целзиус(а|и))"
+        out: "celsius"
+      - in: "Ф | [степен(а|и)] (Фаренхајт[а|и|ови] | во Фаренхајт(а|и))"
+        out: "fahrenheit"
+  brightness_level:
+    values:
+      - in: (макс|максимум|максимално|најјако|најсветло)
+        out: 100
+      - in: (мин|минимум|минимално|најслабо|најтемно)
+        out: 1
+  on_off_states:
+    values:
+      - in: "вклучен[а|о|и|ите|ото|ата]"
+        out: "on"
+      - in: "исклучен[а|о|и|ите|ото|ата]"
+        out: "off"
+  on_off_domains:
+    values:
+      - in: свтл[о|а|ата|ото]|ламб[а|и|ата|ите]|сијалиц[а|и|ата|ите]
+        out: light
+      - in: вентилатор[и|от|ите]
+        out: fan
+      - in: прекинува[ч|чи|чите]
+        out: switch
+expansion_rules: {}
+skip_words:
+  - "[те|ве] молам [да]"
+  - "може(ш|те) [ли] [да]"
+  - "кажи [ми]"
