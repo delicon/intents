@@ -1,6 +1,20 @@
 language: mk
 tests:
-  - sentences: []
+  - sentences:
+      - "колку е температурата?"
+      - "каква е температурата?"
+      - "која е температурата?"
     intent:
       name: HassClimateGetTemperature
-      slots: {}
+    response: "25 °C"
+
+  - sentences:
+      - "колку е температурата во дневната соба?"
+      - "колку е топло во дневната соба?"
+      - "каква е температурата во дневната соба?"
+      - "која е температурата во дневната соба"
+    intent:
+      name: HassClimateGetTemperature
+      slots:
+        area: Дневна Соба
+    response: "25 °C"

@@ -2,4 +2,9 @@ language: mk
 intents:
   HassClimateGetTemperature:
     data:
-      - sentences: []
+      - sentences:
+          - "<what_is> <temp> [во <area>]"
+          - "колку е температурата [[во] <area>]"
+          - "колку е (жешко | ладно | топло) [во] [<area>]"
+          - "дали е (жешко | ладно | топло) [во] [<area>]"
+          - "<what_is> <area> <temp>"
